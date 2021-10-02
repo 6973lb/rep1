@@ -1,0 +1,36 @@
+#include<cstdio>
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main(){
+	string s;
+	freopen("D://软件工程//yq_in.txt", "r", stdin);
+	freopen("D://软件工程//yq_out.txt", "w", stdout);
+	string ss = "";
+	cin >> s;
+	int cnt = 1;
+	cout << s << endl;
+	ss = s;
+	while(cin >> s){
+		if(s != ss && cnt == 0){
+			cout << endl;
+			cnt ++ ;
+			cout << s << endl;
+			ss = s;
+		}
+		else{
+			cnt ++ ;
+		}
+		if(cnt == 2){
+			cout << s;
+			printf("\t");
+		}
+		else if(cnt == 3){
+			cnt = 0;
+			cout << s << endl;
+		}
+	}
+	fclose(stdin);
+	fclose(stdout);
+	return 0;
+}
